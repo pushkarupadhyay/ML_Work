@@ -56,9 +56,12 @@ def predict(model, scaler, data_path, output_path=None):
     
     # Add probabilities if available
     if hasattr(model, 'predict_proba'):
-        probabilities = model.predict_proba(data_scaled)
-        for i in range(probabilities.shape[1]):
-            results[f'probability_class_{i}'] = probabilities[:, i]
+        try:
+            probabilities = model.predict_proba(data_scaled)
+            for i in range(probabilities.shape[1]):
+                results[f'probability_class_{i}'] = probabilities[:, i]
+        except Exception as e:
+            print(f"Warning: Could not generate probabilities: {e}")
     
     print(f"\nPredictions made: {len(predictions)}")
     print(f"Unique predictions: {results['prediction'].unique()}")

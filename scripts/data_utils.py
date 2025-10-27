@@ -9,6 +9,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 from typing import List, Tuple
+from sklearn.preprocessing import LabelEncoder
+from imblearn.over_sampling import RandomOverSampler, SMOTE
+from imblearn.under_sampling import RandomUnderSampler
 
 
 def display_dataframe_info(df: pd.DataFrame, name: str = "DataFrame") -> None:
@@ -147,7 +150,6 @@ def encode_categorical_features(df: pd.DataFrame, columns: List[str] = None,
     if method == 'onehot':
         df_encoded = pd.get_dummies(df_encoded, columns=columns, drop_first=True)
     elif method == 'label':
-        from sklearn.preprocessing import LabelEncoder
         le = LabelEncoder()
         for col in columns:
             df_encoded[col] = le.fit_transform(df_encoded[col].astype(str))
@@ -169,9 +171,6 @@ def balance_dataset(X: pd.DataFrame, y: pd.Series, method: str = 'oversample') -
     Returns:
         Tuple of (balanced_X, balanced_y)
     """
-    from imblearn.over_sampling import RandomOverSampler, SMOTE
-    from imblearn.under_sampling import RandomUnderSampler
-    
     if method == 'oversample':
         sampler = RandomOverSampler(random_state=42)
     elif method == 'undersample':

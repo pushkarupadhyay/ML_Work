@@ -37,7 +37,7 @@ python src/train.py --config config/config.yaml
 
 ### Inference
 ```bash
-python src/predict.py --model-path path/to/model.h5 --input data.csv
+python src/predict.py --model-path path/to/model.joblib --scaler-path path/to/scaler.joblib --input data.csv
 ```
 
 ## Dependencies
