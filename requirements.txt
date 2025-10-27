@@ -1,0 +1,53 @@
+# Core scientific computing libraries
+numpy>=1.24.0
+pandas>=2.0.0
+scipy>=1.10.0
+
+# Machine Learning frameworks
+scikit-learn>=1.3.0
+tensorflow>=2.15.0
+torch>=2.6.0
+keras>=3.11.3
+
+# Deep Learning utilities
+torchvision>=0.17.0
+tensorboard>=2.15.0
+
+# Data visualization
+matplotlib>=3.7.0
+seaborn>=0.12.0
+plotly>=5.14.0
+
+# Jupyter and notebook support
+jupyter>=1.0.0
+ipykernel>=6.20.0
+notebook>=7.0.0
+
+# Natural Language Processing
+nltk>=3.9
+spacy>=3.7.0
+transformers>=4.30.0
+
+# Computer Vision
+opencv-python>=4.9.0
+Pillow>=10.3.0
+
+# Model deployment and tracking
+mlflow>=2.8.0
+
+# Data preprocessing and augmentation
+albumentations>=1.3.0
+imgaug>=0.4.0
+
+# Utilities
+tqdm>=4.65.0
+requests>=2.31.0
+pyyaml>=6.0.0
+python-dotenv>=1.0.0
+
+# Testing
+pytest>=7.4.0
+pytest-cov>=4.1.0
+
+# Data balancing (required by scripts/data_utils.py)
+imbalanced-learn>=0.11.0

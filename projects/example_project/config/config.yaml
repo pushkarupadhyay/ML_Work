@@ -1,0 +1,25 @@
+# Model Training Configuration
+
+# Data settings
+data:
+  path: "../../data/processed/dataset.csv"
+  target_column: "target"
+  test_size: 0.2
+  random_state: 42
+
+# Model settings
+model:
+  type: "random_forest"  # Options: random_forest, logistic_regression, mlp
+  params:
+    n_estimators: 100
+    max_depth: null
+    random_state: 42
+
+# Output settings
+output:
+  model_dir: "../../models"
+  results_dir: "results"
+
+# Training settings
+training:
+  verbose: true
